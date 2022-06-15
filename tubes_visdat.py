@@ -35,15 +35,7 @@ tickers = ['ADRO.JK','ANTM.JK','BRIS.JK','BRPT.JK','PTBA.JK','TPIA.JK','CPIN.JK'
            'JPFA.JK','KLBF.JK','MNCN.JK','MIKA.JK','TKIM.JK','PTPP.JK','PGAS.JK','SMGR.JK','TLKM.JK','TINS.JK','UNVR.JK','UNTR.JK','INCO.JK','WIKA.JK','EXCL.JK'
 ]
 
-df = pd.DataFrame()
-for saham in tickers:
-  data = wb.get_data_yahoo(saham, start='2021-01-01', end= '2025-01-01')
-  data['Tic'] = saham
-  data.reset_index(inplace=True)
-  df = pd.concat([df,data],axis=0)
-df.Date = pd.to_datetime(df.Date)
-df.drop('Adj Close',axis=1, inplace=True)
-df.set_index('Date', inplace=True, drop=True)
+df = pd.read_csv('datasets/dataset.csv')
 
 output_file('Tubes_Visdat.html', title="Saham Viewer")
 
