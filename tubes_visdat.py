@@ -36,6 +36,7 @@ tickers = ['ADRO.JK','ANTM.JK','BRIS.JK','BRPT.JK','PTBA.JK','TPIA.JK','CPIN.JK'
 ]
 
 df = pd.read_csv('datasets/dataset.csv')
+df.Date = pd.to_datetime(df.Date)
 
 output_file('Tubes_Visdat.html', title="Saham Viewer")
 
