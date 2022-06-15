@@ -9,8 +9,8 @@ Original file is located at
 
 # Commented out IPython magic to ensure Python compatibility.
 
-import os
-os.system('pip install bokeh yfinance pandas-datareader requests~=2.23.0 folium==0.2.1')
+#import os
+#os.system('pip install bokeh yfinance pandas-datareader requests~=2.23.0 folium==0.2.1')
 
 import pandas as pd
 import numpy as np
@@ -45,7 +45,7 @@ df.Date = pd.to_datetime(df.Date)
 df.drop('Adj Close',axis=1, inplace=True)
 df.set_index('Date', inplace=True, drop=True)
 
-output_file('Tubes Visdat.html', title="Saham Viewer")
+output_file('Tubes_Visdat.html', title="Saham Viewer")
 
 """# Creating data source"""
 
